@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description" content="WeiChao的个人博客"><meta name="keywords" content="Hexo, Gruntjs, Nodejs, Reactjs, Vuejs"><title>SublimeCodeIntel 无法智能提示  解决方案 - WeiChao For Live</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><div class="post-header"><img class="background" src="http://callfiles.ueibo.com/hexo-theme-laughing/post_background.jpg"><div class="post-title"><h1 class="title">SublimeCodeIntel 无法智能提示  解决方案</h1><ul class="meta"><li><i class="icon icon-author"></i>weichao</li><li><i class="icon icon-clock"></i>2 Minutes</li><li><i class="icon icon-calendar"></i>March 6, 2017</li></ul></div></div><div class="article-content" style="max-width:600px"><p><a href="https://github.com/SublimeCodeIntel/SublimeCodeIntel" target="_blank" rel="external">SublimeCodeIntel</a>   是一个支持 一下如此多的语言代码智能提示的插件(温馨提示: 作者已经没持续更新了)</p>
+<pre><code>    /*
+       An array of language names which are enabled.
+    */
+    &quot;codeintel_enabled_languages&quot;:
+    [
+       &quot;JavaScript&quot;, &quot;SCSS&quot;, &quot;Python&quot;, &quot;HTML&quot;,
+       &quot;Ruby&quot;, &quot;Python3&quot;, &quot;XML&quot;, &quot;Sass&quot;, &quot;HTML5&quot;, &quot;Perl&quot;, &quot;CSS&quot;,
+       &quot;Twig&quot;, &quot;Less&quot;, &quot;Node.js&quot;, &quot;TemplateToolkit&quot;, &quot;PHP&quot;
+    ]
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/1320360-1314b64e9ae60444.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>大概的意思是要你自己创建一个.codeintel 文件夹,然后在里面建个 config.log<br>输入</p>
+<pre><code>{
+    &quot;PHP&quot;: {
+        &quot;php&quot;: &#39;/usr/bin/php&#39;,
+        &quot;phpExtraPaths&quot;: [],
+        &quot;phpConfigFile&quot;: &#39;php.ini&#39;
+    },
+    &quot;JavaScript&quot;: {
+        &quot;javascriptExtraPaths&quot;: []
+    },
+    &quot;Perl&quot;: {
+        &quot;perl&quot;: &quot;/usr/bin/perl&quot;,
+        &quot;perlExtraPaths&quot;: []
+    },
+    &quot;Ruby&quot;: {
+        &quot;ruby&quot;: &quot;/usr/bin/ruby&quot;,
+        &quot;rubyExtraPaths&quot;: []
+    },
+    &quot;Python&quot;: {
+        &quot;python&quot;: &#39;/usr/bin/python&#39;,
+        &quot;pythonExtraPaths&quot;: []
+    },
+    &quot;Python3&quot;: {
+        &quot;python&quot;: &#39;/usr/bin/python3&#39;,
+        &quot;pythonExtraPaths&quot;: []
+    }
+}
+</code></pre><p>然后关闭 sublime text 重新打开就行了,然后你就会神奇的发现,OK了,智能提示已经出现啦,哈哈哈.</p>
+<p>当然,你要知道,在window 中 是不允许创建 以 “.”开头的文件夹的,这时候你就要用到控制台了</p>
+<pre><code>mkdir ..codeintel
+</code></pre><p>然后再去建一个config.log文件就行了.</p>
+</div><div class="article-meta" style="max-width:600px"></div><div class="article-comment" style="max-width:600px"><div class="ds-thread" id="ds-thread" data-thread-key="cizz00min0000ocln4c2d355x" data-title="SublimeCodeIntel 无法智能提示  解决方案" data-url="http://yoursite.com/2017/03/06/SublimeCodeIntel 无法智能提示  解决方案/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
+var duoshuoQuery = {short_name: siteName};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';ds.async = true;
+  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] 
+  || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2017/02/28/hello-world/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="http://github.com/BoizZ" title="GitHub" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="http://weibo.com/heqibang" title="WeiBo" target="_blank"><i class="icon icon-weibo"></i></a></li><li><a href="http://www.segmentfault.com/u/bon" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2017 WeiChao For Live<br><small>POWER BY <a href="https://hexo.io" target="_blank">HEXO</a></small><small>, THEME BY <a href="https://github.com/BoizZ/hexo-theme-laughing" target="_blank">LAUGHING</a></small></p></div></div></body></html>
